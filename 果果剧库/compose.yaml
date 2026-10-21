@@ -1,0 +1,26 @@
+name: guoguo-juku
+services:
+  app:
+    image: ${JUKU_IMAGE:-guoguo-juku:local}
+    build:
+      context: .
+    ports:
+      - "${JUKU_BIND_ADDRESS:-0.0.0.0}:${JUKU_PORT:-8999}:8999"
+    environment:
+      TZ: ${TZ:-Asia/Shanghai}
+      JUKU_PROXY_URL: ${JUKU_PROXY_URL:-}
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+    volumes:
+      - data:/data
+      - downloads:/downloads
+    restart: unless-stopped
+    stop_grace_period: 30s
+    logging:
+      driver: json-file
+      options:
+        max-size: "10m"
+        max-file: "3"
+volumes:
+  data:
+  downloads:

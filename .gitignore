@@ -1,0 +1,28 @@
+# Local caches and installed toolchains
+.cache/
+.tools/
+
+# Runtime data, downloaded videos, and generated application binaries
+/果果剧库/data/
+/果果剧库/dist/
+/果果剧库/短剧下载/
+/果果剧库/压缩包项目/data/
+/果果剧库/压缩包项目/dist/
+/果果剧库/压缩包项目/短剧下载/
+**/bin/ffmpeg
+**/bin/ffmpeg.exe
+**/bin/ffprobe
+**/bin/ffprobe.exe
+**/bin/*/verified-*/
+
+# Local environment and operating-system files
+.env
+.env.*
+!.env.example
+!.env.sample
+.DS_Store
+Thumbs.db
+Desktop.ini
+*.log
+*~
+/果果剧库/internal/app/data/
